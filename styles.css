@@ -24,14 +24,16 @@
     top: 0;
     left: 0;
     height: 100vh;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--sidebar-border);
+    flex-shrink: 0;
 }
 
 .sidebar-header h3 {
@@ -44,10 +46,13 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-menu li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .nav-menu a {
@@ -119,6 +124,30 @@
         position: relative;
         border-right: none;
         border-bottom: 1px solid var(--sidebar-border);
+        padding: 0.75rem;
+    }
+    
+    .sidebar-header {
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    
+    .nav-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .nav-menu li {
+        margin-bottom: 0;
+        flex: 1;
+        min-width: calc(50% - 0.25rem);
+    }
+    
+    .nav-menu a {
+        padding: 0.5rem 0.75rem;
+        text-align: center;
+        font-size: 0.9rem;
     }
 
     .main-content {
